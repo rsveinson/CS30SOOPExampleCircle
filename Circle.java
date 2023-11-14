@@ -119,10 +119,10 @@ public class Circle {
     @Override
     public String toString(){
         String st;
-        st = "Radius: " + this.radius + nl;
-        st += "Diameter: " + this.getDiameter() + nl;
-        st += "Circumference: " + this.getCircumference() + nl;
-        st += "Area: " + this.getArea() + nl;
+        st = "Radius: " + String.format("%8.3f",this.radius) + nl;
+        st += "Diameter: " + String.format("%8.3f",this.getDiameter()) + nl;
+        st += "Circumference: " + String.format("%8.3f",this.getCircumference()) + nl;
+        st += "Area: " + String.format("%8.3f",this.getArea()) + nl;
 
         return st;
     }// end toString
