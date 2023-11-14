@@ -31,22 +31,13 @@ public class CircleDriver {
 
         String[] tokens = null;         // used to split input records
 
-        // a new line character that works on every computer system
-
         // ***** objects *****
         ProgramInfo pInfo = new ProgramInfo("Circle Object Example");
+        
         //Scanner scanner = new Scanner(System.in);
-        //NumberFormat currency = NumberFormat.getCurrencyInstance();
-
-        // file io buffers for reading and writing to text files
-
-        //BufferedReader fin = new BufferedReader(new FileReader("filename.txt"));
-        //PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("outfle.txt")));
-
         // ***** print banners *****
 
         System.out.println(pInfo.getBanner());
-        //fout.print(banner);
 
         // ***** Using the Circle Class *****
         
@@ -62,12 +53,36 @@ public class CircleDriver {
         //circle1.radius = 2.34;
         
         // use getters and setters
+        circle1.setRadius(2.5);
         System.out.println(circle1.getRadius());
+        
+        // test out the utility methods
+        double diameter = circle2.getDiameter();
+        System.out.println(diameter);
+        
+        circle1.setRadius(2.75);
+        double circumference = circle1.getCircumference();
+        System.out.format("%8.3f%s", circumference, nl);
+        
+        System.out.format("%8.3f%s", circle2.getArea(), nl);
+        
+        // use .equals() and toString()
+        boolean equalCircles = circle1.equals(circle2);
+        System.out.println("Circle 1 == Circle 2 is " + equalCircles);
+        
+        circle1.setRadius(circle2.getRadius());
+        equalCircles = circle1.equals(circle2);
+        System.out.println("Circle 1 == Circle 2 is " + equalCircles);
+        
+        // use toSTring()
+        System.out.println(circle1.toString());
+        System.out.println();
+        System.out.println(circle2);
         
         /* logic Challenge:
          * what happens here?
          */
-        System.out.println(circle2);
+        //System.out.println(circle2);
 
         // ***** Print Formatted Output *****
 

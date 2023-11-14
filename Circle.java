@@ -12,13 +12,15 @@
 
 public class Circle {
     //*** Class Variables ***
- 
+
+    // a new line character that works on every computer system
+    final static String nl = System.lineSeparator();
     private final double PI = 3.14159;
-    
+
     //*** Instance Variables ***
-    
+
     private double radius;
-    
+
     //*** Constructors ***
     /* a constructor is the only way we
      * can intantiate an object from a clss
@@ -31,43 +33,97 @@ public class Circle {
     public Circle(){
         this.radius = 0.0;
     }// end no-arg
-    
+
     // initialized or parametered constructor
     // takes values as parameters and assigns
     // values to the fields of the object
     public Circle(double radius){
         this.radius = radius;
     }// end param constructor
-    
+
     /*****************************************
-    * Description: brief description of the methods purpose
-    * 
-    * Interface:
-    * 
-    * @param        each parameter of the method should be listed with an @param
-    * @param        parametername description of parameter
-    * 
-    * @return       any return value will be noted here
-    * ****************************************/
-    
-    
+     * Description: brief description of the methods purpose
+     * 
+     * Interface:
+     * 
+     * @param        each parameter of the method should be listed with an @param
+     * @param        parametername description of parameter
+     * 
+     * @return       any return value will be noted here
+     * ****************************************/
+
     //*** Getters ***
     /*****************************************
-    * Description: get the radius of the circle
-    * 
-    * Interface:
-    * 
-    * @return       double: radius of the circle
-    * ****************************************/
+     * Description: get the radius of the circle
+     * 
+     * Interface:
+     * 
+     * @return       double: radius of the circle
+     * ****************************************/
     public double getRadius(){
         return this.radius;
     }//end get radius
-    
-    
+
     //*** Setters ***
-    
     public void setRadius(double r){
         this.radius = r;
     }// end set radius
-    
+
+    // *** utility methods ***
+
+    // calculate diameter
+    /*****************************************
+     * Description: Calculate the diameter of the circel with radius r
+     * 
+     * Interface:
+     * 
+     * @return       diameter of the circle: double
+     * ****************************************/
+    public double getDiameter(){
+        return this.radius * 2;
+    }// end diameter
+
+    // calculate circumference
+    /*****************************************
+     * Description: Calculate the circumference of the circel with radius r
+     * 
+     * Interface:
+     * 
+     * @return       circumference of the circle: double
+     * ****************************************/
+    public double getCircumference(){
+        return this.radius * 2 * PI;
+    }// end circumference
+
+    // calculate area
+    /*****************************************
+     * Description: Calculate the area of the circel with radius r
+     * 
+     * Interface:
+     * 
+     * @return       area of the circle: double
+     * ****************************************/
+    public double getArea(){
+        return this.radius * this.radius * PI;
+    }// end area
+
+    // Overriding methods
+    public boolean equals(Circle oc){
+        boolean equal;
+
+        equal = this.radius == oc.getRadius();
+
+        return equal;
+    }// end equals
+
+    @Override
+    public String toString(){
+        String st;
+        st = "Radius: " + this.radius + nl;
+        st += "Diameter: " + this.getDiameter() + nl;
+        st += "Circumference: " + this.getCircumference() + nl;
+        st += "Area: " + this.getArea() + nl;
+
+        return st;
+    }// end toString
 } // end of public class
