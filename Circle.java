@@ -16,10 +16,13 @@ public class Circle {
     // a new line character that works on every computer system
     final static String nl = System.lineSeparator();
     private final double PI = 3.14159;
+    
+    private static int nextID = 1000;       // used to autogenerate unique id numbers
 
     //*** Instance Variables ***
 
     private double radius;
+    private int id;                 // id number of a specific employee
 
     //*** Constructors ***
     /* a constructor is the only way we
@@ -32,6 +35,7 @@ public class Circle {
     // default value
     public Circle(){
         this.radius = 0.0;
+        id = getNextID();
     }// end no-arg
 
     // initialized or parametered constructor
@@ -39,7 +43,12 @@ public class Circle {
     // values to the fields of the object
     public Circle(double radius){
         this.radius = radius;
+        id = getNextID();
     }// end param constructor
+    
+    private int getNextID(){
+        return nextID++;            // return curren id and incremnt for next use
+    }// end get next id
 
     /*****************************************
      * Description: brief description of the methods purpose
@@ -63,6 +72,10 @@ public class Circle {
     public double getRadius(){
         return this.radius;
     }//end get radius
+    
+    public int getID(){
+        return this.id;
+    }// end get id
 
     //*** Setters ***
     public void setRadius(double r){
@@ -119,7 +132,8 @@ public class Circle {
     @Override
     public String toString(){
         String st;
-        st = "Radius: " + String.format("%8.3f",this.radius) + nl;
+        st = "Circle ID: " + getID() + nl;
+        st += "Radius: " + String.format("%8.3f",this.radius) + nl;
         st += "Diameter: " + String.format("%8.3f",this.getDiameter()) + nl;
         st += "Circumference: " + String.format("%8.3f",this.getCircumference()) + nl;
         st += "Area: " + String.format("%8.3f",this.getArea()) + nl;
