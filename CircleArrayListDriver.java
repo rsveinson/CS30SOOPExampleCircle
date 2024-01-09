@@ -7,9 +7,9 @@ import java.text.NumberFormat;
  *  Name:           Sveinson
  *  Class:          CS30S
  * 
- *  Assignment:     Ax Qy
+ *  Assignment:     Intro to OOP with Circles
  * 
- *  Description:    Place a short description of your program here
+ *  Description:    an ArrayList of Circles
  * 
  *************************************************************/
 

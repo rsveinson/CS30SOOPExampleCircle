@@ -79,6 +79,9 @@ public class CircleDriver {
         System.out.println();
         System.out.println(circle2);
         
+        int[] list = new int[5];
+        System.out.println(list);
+        
         /* logic Challenge:
          * what happens here?
          */
